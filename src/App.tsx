@@ -8,7 +8,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/basket" component={Basket} />
+        <Route path="/basket">
+          <Basket />
+        </Route>
       </Router>
     </div>
   );
