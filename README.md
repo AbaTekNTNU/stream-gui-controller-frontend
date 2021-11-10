@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Abatek stream gui controller
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Denne webappen brukes på en iPad eller datamaskin for å styre ui-et som vises i stream. VI skriver den modular, så baset-delen skal finnes på /basket.
 
-## Available Scripts
+### Valg vi tar i appen
 
-In the project directory, you can run:
+Vi står fritt til å ta de valg vi ønsker. Kanskje vi skal bruke noe lett for å gjøre css her? Evt liker jeg styled-components hvis vi skriver css selv.
 
-### `yarn start`
+Litt ting jeg tenker må gjøres riktig:
+For å håndtere client side state ønsker vi på sikt å bruke RTK, men dette er ikke et krav i første omgang.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For å sende events til backenden foreslår jeg at vi lager en /basketball post i backenden som tar inn en body: {event: <name>} i stedet for å lage mange forskjellige endepunketer. Dette kan gjøre at vi kan skrive frontenden med mindre kode.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Jeg har markert det som må gjøres frem til lørdag 13. november med :1:
+Resten venter vi med.
 
-### `yarn test`
+## De forskjellige delene av appen:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Forsiden:
 
-### `yarn build`
+- Dette skal være en enkel side med de forskjellige modulene man kan velge :1:
+- Det skal også være mulig å koble til en backend fra denne siden. Type "Skriv inn addresse som vi kan bruke som bff"
+- På sikt kan den gjøre automatisk tilkobling til backenden med fping eller lignende?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Basket:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Dette er en modul som er tightly koblet mot basket-servicene. Her trenger vi følgende funksjonlaitet:
+  - Når kanpper er aktive vil jeg at de skal ha en utfyllende farge, slik at det er lett å se når de er disabled og ikke :1:
+  - Knapp for å toggle visning av score (event: show_score / hide_score) :1:
+  - Knapp for å vise klokken (event: show_game_clock / hide_game_clock) :1:
+  - En genrell komponent for å opprette lignende knapper som over
+  - Knapp for å åpne spillerstats-visning
+    - Knapper for å velge type stats som skal vises og hvilke spiller som skal vises stats for
+  - Knapp for å toggle total score utfyllende visning (total score utfyllende = sånn som dekker hele undersiden; vi kommer til å definere dette bedre i domenet i bffen) (event: show_game_scoring_stats / hide_game_scoring_stats)
+  - Knapp for å toggle visning av lagstats (event: show_team_stats / hide_team_stats)
