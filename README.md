@@ -11,23 +11,23 @@ For å håndtere client side state ønsker vi på sikt å bruke RTK, men dette e
 
 For å sende events til backenden foreslår jeg at vi lager en /basketball post i backenden som tar inn en body: {event: <name>} i stedet for å lage mange forskjellige endepunketer. Dette kan gjøre at vi kan skrive frontenden med mindre kode.
 
-Jeg har markert det som må gjøres frem til lørdag 13. november med :1:
+Jeg har markert det som må gjøres frem til lørdag 13. november med :+1:
 Resten venter vi med.
 
 ## De forskjellige delene av appen:
 
 ### Forsiden:
 
-- Dette skal være en enkel side med de forskjellige modulene man kan velge :1:
+- Dette skal være en enkel side med de forskjellige modulene man kan velge :+1:
 - Det skal også være mulig å koble til en backend fra denne siden. Type "Skriv inn addresse som vi kan bruke som bff"
 - På sikt kan den gjøre automatisk tilkobling til backenden med fping eller lignende?
 
 ### Basket:
 
 - Dette er en modul som er tightly koblet mot basket-servicene. Her trenger vi følgende funksjonlaitet:
-  - Når kanpper er aktive vil jeg at de skal ha en utfyllende farge, slik at det er lett å se når de er disabled og ikke :1:
-  - Knapp for å toggle visning av score (event: show_score / hide_score) :1:
-  - Knapp for å vise klokken (event: show_game_clock / hide_game_clock) :1:
+  - Når kanpper er aktive vil jeg at de skal ha en utfyllende farge, slik at det er lett å se når de er disabled og ikke :+1:
+  - Knapp for å toggle visning av score (event: show_score / hide_score) :+1:
+  - Knapp for å vise klokken (event: show_game_clock / hide_game_clock) :+1:
   - En genrell komponent for å opprette lignende knapper som over
   - Knapp for å åpne spillerstats-visning
     - Knapper for å velge type stats som skal vises og hvilke spiller som skal vises stats for
