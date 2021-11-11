@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Basket from "./modules/basket";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/basket">
-          <Basket />
-        </Route>
+        <Routes>
+          <Route path="/basket" element={<Basket />} />
+        </Routes>
       </Router>
     </div>
   );

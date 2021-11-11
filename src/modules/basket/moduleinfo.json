@@ -1,0 +1,15 @@
+{
+  "url": "https://localhost:8000",
+  "eventGroups": [
+    {
+      "name": "Show Score",
+      "activatedEventName": "show_score",
+      "deactivatedEventName": "hide_score"
+    },
+    {
+      "name": "Show Clock",
+      "activatedEventName": "show_game_clock",
+      "deactivatedEventName": "hide_game_clock"
+    }
+  ]
+}
