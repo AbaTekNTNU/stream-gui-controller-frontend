@@ -5,15 +5,13 @@ import moduleinfo from "../moduleinfo.json";
 type CheckBoxButtonProps = {
   children?: ReactNode;
   id: string;
-  activatedEventName: string;
-  deactivatedEventName: string;
+  eventName: string;
 };
 
 const RemoteCheckboxButton = ({
   children,
   id,
-  activatedEventName,
-  deactivatedEventName,
+  eventName,
 }: CheckBoxButtonProps) => {
   // Decide name/id of toggle based on which property is defined
   id = id ? id : String.apply(children);
@@ -30,7 +28,12 @@ const RemoteCheckboxButton = ({
       mode: "no-cors",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        event: isActived ? activatedEventName : deactivatedEventName,
+        type: "score",
+        payload: {
+          value: isActived,
+          control: eventName,
+          type: "control",
+        },
       }),
     };
 

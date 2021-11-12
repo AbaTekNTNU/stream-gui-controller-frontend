@@ -1,15 +1,13 @@
 {
-  "url": "https://localhost:8000",
+  "url": "http://localhost:4000/controller",
   "eventGroups": [
     {
       "name": "Show Score",
-      "activatedEventName": "show_score",
-      "deactivatedEventName": "hide_score"
+      "eventName": "score_visibility"
     },
     {
       "name": "Show Clock",
-      "activatedEventName": "show_game_clock",
-      "deactivatedEventName": "hide_game_clock"
+      "eventName": "clock_visibility"
     }
   ]
 }

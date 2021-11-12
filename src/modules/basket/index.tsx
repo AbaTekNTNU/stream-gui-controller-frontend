@@ -6,16 +6,9 @@ import moduleinfo from "./moduleinfo.json";
 const Basket = () => {
   console.log(moduleinfo);
 
-  const buttons = moduleinfo.eventGroups.map(
-    ({ name, activatedEventName, deactivatedEventName }) => (
-      <RemoteToggle
-        key={name}
-        id={name}
-        activatedEventName={activatedEventName}
-        deactivatedEventName={deactivatedEventName}
-      />
-    )
-  );
+  const buttons = moduleinfo.eventGroups.map(({ name, eventName }) => (
+    <RemoteToggle key={name} id={name} eventName={eventName} />
+  ));
 
   return (
     <div className={styles.wrapper}>
