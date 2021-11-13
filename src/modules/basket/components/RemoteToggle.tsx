@@ -6,12 +6,14 @@ type CheckBoxButtonProps = {
   children?: ReactNode;
   id: string;
   eventName: string;
+  eventType: string;
 };
 
 const RemoteCheckboxButton = ({
   children,
   id,
   eventName,
+  eventType,
 }: CheckBoxButtonProps) => {
   // Decide name/id of toggle based on which property is defined
   id = id ? id : String.apply(children);
@@ -25,10 +27,9 @@ const RemoteCheckboxButton = ({
 
     const requestOptions: RequestInit = {
       method: "POST",
-      mode: "no-cors",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        type: "score",
+        type: eventType,
         payload: {
           value: isActived,
           control: eventName,
