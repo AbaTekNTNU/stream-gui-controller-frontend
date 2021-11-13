@@ -25,6 +25,11 @@
       "type": "game_information",
       "name": "Show inital game information",
       "eventName": "game.initial.summary"
+    },
+    {
+      "type": "game_information",
+      "name": "Show team presentation",
+      "eventName": "team.information"
     }
   ]
 }
