@@ -25,6 +25,7 @@ const RemoteCheckboxButton = ({
 
     let responseData;
 
+    // eslint-disable-next-line
     const requestOptions: RequestInit = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
