@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Dette repositoriet er nå arkivert og read only. Bruk: https://github.com/AbaTekNTNU/streaming-graphics-v2
+
 # Abatek stream gui controller
 
 Denne webappen brukes på en iPad eller datamaskin for å styre ui-et som vises i stream. VI skriver den modular, så baset-delen skal finnes på /basket.
